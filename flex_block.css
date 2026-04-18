@@ -1,0 +1,256 @@
+:root {
+  --color: #a44fae;
+  --radius: 5px;
+  --color_for_text: #5c0565;
+}
+
+body {
+  margin: 0;
+  background-color: rgba(193, 87, 205, 0.322);
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ПОИСКОВАЯ СТРОКА */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #d4b0d9;
+    border-radius: 25px;
+    padding: 5px 5px 5px 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.search-wrapper:focus-within {
+    border-color: var(--color);
+    box-shadow: 0 4px 10px rgba(164, 79, 174, 0.15);
+}
+
+.search-wrapper input {
+    border: none;
+    outline: none;
+    font-size: 13px;
+    width: 230px;
+    padding: 8px 0;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-wrapper input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.search-wrapper button {
+    background: var(--color);
+    border: none;
+    border-radius: 25px;
+    padding: 8px 18px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.search-wrapper button:hover {
+    background: var(--color_for_text);
+}
+/* КОНЕЦ ПОИСКОВОЙ СТРОКИ */
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовков */
+}
+
+p{
+  font-family: 'Merriweather';
+}
+
+.logo-bookery {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+}
+
+
+.logo-main {
+    display: block;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--color_for_text);
+}
+
+.logo-sub {
+    display: block;
+    font-size: 9.5px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color);
+    margin-top: 2px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #a44fae56;
+  position: sticky;
+  top: 0px;
+  padding-left: 20px;
+  padding-right: 13px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.178);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+.catalog, .contact, .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.catalog::after, .catalog::before{
+  content: '|';
+  color: var(--color_for_text);
+}
+
+a {
+  color: var(--color_for_text);
+  text-decoration: none;
+  font-size: 85%;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+a:hover {
+  color: #9752a7;
+  transform: scale(1.06); 
+}
+
+h2{
+  display: flex;
+  width: 100%;
+  height: 15px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.info-block{
+  padding: 0px 20px;
+}
+
+.highlight{
+  color: var(--color_for_text)
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f7f0f9;
+  border-radius:8px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  color: #4b2c50;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-family: 'Merriweather', serif;
+  font-size: 1.1rem;
+  color: #5a6b82;
+  font-style: italic;
+}
+
+
+/* МЕДИА  1*/
+@media (max-width: 768px) {
+  .nav {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5px;
+    transform: rotate(-90deg);
+
+  }
+  
+  .catalog {height: 67px;   width: 22px;}
+  .info {height: 50px; width: 21px;}
+  .contact {height: 80px; width: 24px;}
+
+  .info,  .contact, .catalog {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid var(--color);
+    border-radius: var(--radius);
+    transition: transform 0.3s ease;
+    writing-mode: vertical-rl; 
+    text-orientation: mixed; 
+    white-space: normal; 
+  }
+
+  a {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+  .catalog::after, .catalog::before{
+  content: none;
+  }
+}
+
+/* МЕДИА  2*/
+@media (min-width: 992px){
+  .search-wrapper {
+    display: flex;               
+    order: 3;
+  }
+   .logo-bookery {
+      order: 1;
+    }
+
+    .nav {
+      order: 2;
+      justify-content: center;
+
+    }
+
+    .catalog, .info, .contact {
+        width: auto;
+        height: auto;
+        border: none;
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 0;
+    }
+    a {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+  }
+  .logo-main {
+    font-size: 35px;
+  }
+  .logo-sub {
+    font-size: 12.5px;
+  }
+
+}
