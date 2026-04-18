@@ -460,7 +460,10 @@ hr {
   opacity: 0.7;
 }
 
-
+@media (max-width: 410px) {
+  .search-wrapper {
+    display: none; 
+  }
 
 @media (max-width: 768px) {
   .nav {
