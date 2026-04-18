@@ -465,7 +465,7 @@ hr {
     display: none; 
   }
 
-@media (max-width: 770px) {
+@media (max-width: 768px) {
   .nav {
     display: flex;
     align-items: flex-end;
