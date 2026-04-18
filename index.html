@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="flex_block.css" />
+    <meta
+      name="description"
+      content="Купить книги онлайн в Bookery. 45 000 изданий: художественная литература, новинки, классика. Быстрая доставка, удобная оплата."
+    />
+    <title>Bookery — ваш мир книг в одном клике</title>
+
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,10 +19,13 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="logo-bookery">
-        <span class="logo-main">Bookery</span>
-        <span class="logo-sub">читай • думай • живи</span>
-      </h1>
+      <span class="logo-bookery">
+        <span class="logo-main">B<span class="oo">oo</span>kery</span>
+        <span class="logo-sub"
+          >читай <span class="tochka">•</span> думай
+          <span class="tochka">•</span> живи</span
+        >
+      </span>
 
       <div class="search-wrapper">
         <input type="search" placeholder="Найти книгу, автора или жанр..." />
@@ -38,17 +46,15 @@
 
       <nav class="nav">
         <div class="info"><a href="#info-block">О нас</a></div>
-        <div class="catalog"><a href="#">Каталог</a></div>
-        <div class="contact"><a href="#">Контакты</a></div>
+        <div class="catalog"><a href="#content">Каталог</a></div>
+        <div class="contact"><a href="#footer">Контакты</a></div>
       </nav>
     </header>
 
     <main>
       <section class="hero">
         <h1>Bookery — ваш мир книг в одном клике</h1>
-        <p class="hero-subtitle">
-          45 000 изданий • Быстрая доставка • Комфорт
-        </p>
+        <p class="hero-subtitle">45 000 изданий • Быстрая доставка • Комфорт</p>
       </section>
       <section class="info-block" id="info-block">
         <h2>О нас</h2>
@@ -80,8 +86,151 @@
           любимую историю в <em>«Bookery»</em> уже сегодня!
         </p>
       </section>
+
+      <hr class="delenie" />
+
+      <section class="content" id="content">
+        <h2>Каталог бестселлеров</h2>
+        <div class="grid-container">
+          <!-- Книга 1 -->
+          <article class="book-card">
+            <span class="book-id">001</span>
+            <div
+              class="pic"
+              style="
+                background-image: url(&quot;photo_2026-04-18_15-37-01.jpg&quot;);
+              "
+            ></div>
+            <h3 class="name">Мастер и Маргарита</h3>
+            <hr />
+            <p class="description">Булгаков М.А.</p>
+          </article>
+
+          <!-- Книга 2 -->
+          <article class="book-card">
+            <span class="book-id">002</span>
+            <div
+              class="pic"
+              style="
+                background-image: url(&quot;Преступление-и-наказание.jpg&quot;);
+              "
+            ></div>
+            <h3 class="name">Преступление и наказание</h3>
+            <hr />
+            <p class="description">Достоевский Ф.М.</p>
+          </article>
+
+          <!-- Книга 3 -->
+          <article class="book-card">
+            <span class="book-id">003</span>
+            <div
+              class="pic"
+              style="background-image: url(&quot;Евгений-Онегин.jpg&quot;)"
+            ></div>
+            <h3 class="name">Евгений Онегин</h3>
+            <hr />
+            <p class="description">Пушкин А.С.</p>
+          </article>
+
+          <!-- Книга 4 -->
+          <article class="book-card">
+            <span class="book-id">004</span>
+            <div
+              class="pic"
+              style="background-image: url(&quot;Война-и-мир.jpg&quot;)"
+            ></div>
+            <h3 class="name">Война и мир</h3>
+            <hr />
+            <p class="description">Толстой Л.Н.</p>
+          </article>
+
+          <!-- Книга 5 -->
+          <article class="book-card">
+            <span class="book-id">005</span>
+            <div
+              class="pic"
+              style="background-image: url(&quot;Анна-Каренина.jpg&quot;)"
+            ></div>
+            <h3 class="name">Анна Каренина</h3>
+            <hr />
+            <p class="description">Толстой Л.Н.</p>
+          </article>
+
+          <!-- Книга 6 -->
+          <article class="book-card">
+            <span class="book-id">006</span>
+            <div
+              class="pic"
+              style="
+                background-image: url(&quot;image_2026-04-18_15-52-27.png&quot;);
+              "
+            ></div>
+            <h3 class="name">Герой нашего времени</h3>
+            <hr />
+            <p class="description">Лермонтов М.Ю.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Секция заказа -->
+      <section class="order-section" id="order">
+        <h2>Заказать книгу</h2>
+
+        <form class="order-form" action="#" method="POST">
+          <label>
+            <span>Ваше ФИО</span>
+            <input
+              type="text"
+              name="fio"
+              required
+              placeholder="Иванов Иван Иванович"
+            />
+          </label>
+
+          <label>
+            <span>ID книги</span>
+            <input
+              type="text"
+              name="book_id"
+              required
+              placeholder="001"
+              pattern="[0-9]{3}"
+              title="Введите 3 цифры"
+            />
+          </label>
+
+          <label>
+            <span>Адрес доставки</span>
+            <input
+              type="text"
+              name="address"
+              required
+              placeholder="г. Москва, ул. Пушкина, д. 10"
+            />
+          </label>
+
+          <fieldset>
+            <legend>Способ получения</legend>
+            <label
+              ><input type="radio" name="delivery" value="delivery" required />
+              Доставка</label
+            >
+            <label
+              ><input type="radio" name="delivery" value="pickup" />
+              Самовывоз</label
+            >
+          </fieldset>
+
+          <button type="submit" class="order-btn">Заказать книгу</button>
+        </form>
+      </section>
     </main>
 
-    <footer></footer>
+    <footer class="footer" id="footer">
+      <p><a href="mailto:hello@bookery.ru">hello@bookery.ru</a></p>
+      <p><a href="tel:+78001234567">+7 (800) 123-45-67</a></p>
+      <p>Москва, ул. Литературная, 12</p>
+      <p class="copy">© 2026 Bookery</p>
+    </footer>
   </body>
 </html>
